@@ -58,12 +58,12 @@ inquirer
         },
         {
             type: 'input',
-            name: 'installtion',
+            name: 'installation',
             message: "provide instructions for installation"
         },
         {
             type: 'input', 
-            name: 'usage ',
+            name: 'usage',
             message: 'Provide guidelines for usage'
         },
         {
@@ -88,6 +88,7 @@ inquirer
         },
     ])
     .then((info) => {
+        console.log(info.description)
         const readmeFile = readmeGenerator(info);
     
         Fs.writeFile('READme.md', readmeFile, (err) =>
